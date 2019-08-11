@@ -41,7 +41,7 @@ export default {
 			(await this.getFromWeb().catch(_ => {
 				this.isNotFound = true
 			}))
-		console.log(item)
+		// console.log(item)
 		if (item) {
 			this.$store.dispatch('set_items', item)
 			this.item = this.getItemByIdFromStore(item.id)

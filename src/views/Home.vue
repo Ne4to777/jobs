@@ -50,7 +50,13 @@
 				</div>
 			</div>
 			<div class="uk-margin-top uk-inline uk-width-1-1">
-				<input type="button" class="uk-button uk-button-default" value="Search" @click="onSearchClick" />
+				<input
+					type="button"
+					class="uk-button uk-button-default"
+					value="Search"
+					ref="SearchButton"
+					@click="onSearchClick"
+				/>
 				<label>
 					<input
 						type="checkbox"
@@ -112,12 +118,14 @@ export default {
 		CompanyCard
 	},
 	created() {
+		this.bindPressEnter()
 		this.bindScroll()
 		;['description', 'location', 'lat', 'long', 'page', 'byCoords'].map(
 			this.setPropFromRoute
 		)
 	},
 	beforeDestroy() {
+		this.unbindPressEnter()
 		this.unbindScroll()
 	},
 	data() {
@@ -264,11 +272,22 @@ export default {
 		onInput(e) {
 			this.syncDataToQuery(e.target.name)
 		},
+		onPressEnter(e) {
+			if (e.key == 'Enter' && !this.isPending) {
+				this.$refs.SearchButton.click()
+			}
+		},
 		bindScroll() {
 			window.addEventListener('scroll', this.onScroll)
 		},
 		unbindScroll() {
 			window.removeEventListener('scroll', this.onScroll)
+		},
+		bindPressEnter() {
+			window.addEventListener('keydown', this.onPressEnter)
+		},
+		unbindPressEnter() {
+			window.removeEventListener('keydown', this.onPressEnter)
 		}
 	}
 }
