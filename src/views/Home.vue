@@ -166,7 +166,7 @@ export default {
 					if (axios.isCancel(err)) {
 						console.log('Request canceled')
 					} else {
-						// handle error
+						console.log(err.message)
 					}
 				})
 

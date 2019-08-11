@@ -26,10 +26,5 @@ body
 	font-family Roboto
 	font-weight $font-weight_base
 	font-size $font-size_very-small
-	// color $dark
 	margin 0
-	// background-color black
-
-a
-	// color $dark
 </style>
