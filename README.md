@@ -13,7 +13,7 @@ Test task using Vue.js, vue-router, vuex
 - scroll position holding
 
 ## Install
-Run bash from project folder and ентер alternately:
+Run bash from project folder and enter alternately:
 ```
 git clone https://github.com/Ne4to777/jobs.git .
 npm i
