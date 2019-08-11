@@ -20,7 +20,8 @@ export default {
 @import './assets/stylus/global.styl'
 @import './../node_modules/uikit/dist/css/uikit.min.css'
 
-$dark = #a2a2a2
+a
+	word-break break-all
 
 body
 	font-family Roboto
